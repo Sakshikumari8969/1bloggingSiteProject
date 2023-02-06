@@ -4,6 +4,7 @@ const route=require("./routes/route");
 const{default:mongoose}=require("mongoose");
 const { urlencoded } = require("express");
 const app=express();
+mongoose.set('strictQuery', true)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));

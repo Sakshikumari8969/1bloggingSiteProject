@@ -25,13 +25,13 @@ const blogCreate=async function(req,res){
     if(!data.category) return  res.status(400).send("category is required")
     if(!data.subcategory) return  res.status(400).send("subcategory is required")
     if(!data.authorId) return  res.status(400).send("authorId does not exist")
-    // let author=await authorModel.findById(authorId)
-    // if(!author){
-    //     res.status(403).send({msg:"author does not exist"})
-    // }else{
+    let author=await authorModel.findById(authorId)
+    if(!author){
+        res.status(403).send({msg:"author does not exist"})
+    }else{
     let savedData=await blogModel.create(data)
     res.status(201).send({msg:savedData})
-   }catch(error){
+   }}catch(error){
     res.status(500).send({error:error.message})
    }
 }

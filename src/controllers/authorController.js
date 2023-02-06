@@ -42,7 +42,7 @@ const loginAuthor=async function(req,res){
     if(!login){
         res.status(404).send({msg:"user email and password is not registered"})
     }else{
-        let token=jwt.sign({_id:login.id},"projectum1")
+        let token=jwt.sign({authorId:login.id},"projectum1")
         res.status(201).send({status:true,msg:token})
     }
 }catch(error){
