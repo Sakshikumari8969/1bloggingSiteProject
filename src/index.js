@@ -9,7 +9,7 @@ mongoose.set('strictQuery', true)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb+srv://Sakshi:monday123@cluster0.z5dpz2x.mongodb.net/myProject-1",
+mongoose.connect("",
 {useNewUrlParser:true}).then( ()=> console.log("MongoDb is ready")).catch(err=>console.log(err))
 
 app.use("/",route)
